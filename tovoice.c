@@ -29,6 +29,7 @@
 #include <sndfile.h>
 #include <string.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 /* defines */
 #define DEFAULT_CHARDIR "."
