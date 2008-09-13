@@ -235,12 +235,12 @@ int main(int argc, char **argv) {
 	  sfc = sf_writef_double(sfd, ics, lenics);
 	else
 	  spaceflag = 0;
-	for (charptr = morse[index]; *charptr != NULL; charptr++) {
+	for (charptr = morse[index]; charptr != NULL; charptr++) {
 	  if (*charptr == '.')
 	    sfc = sf_writef_double(sfd, dit, lendit);
 	  else
 	    sfc = sf_writef_double(sfd, dah, lendah);
-	  if (*(charptr+1) != NULL)
+	  if ((charptr+1) != NULL)
 	    sfc = sf_writef_double(sfd, ies, lenies);
 	}
       }
