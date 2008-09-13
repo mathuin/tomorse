@@ -1,0 +1,52 @@
+1.  What does tomorse do?
+
+"tomorse" outputs CD-quality audio containing the International Morse
+Code equivalent of input text. The project also includes support
+scripts which can be used to generate practice files. It runs on all
+known Unixes and also under Cygwin.
+
+2.  What is included in this release?
+
+This release includes the following files:
+
+tomorse.c -- a C program that generates Morse code from text
+newkoch.pl -- a Perl script that builds Koch method practice files 
+morse-build -- a shell script to build Morse files
+morse-install -- a shell script to install Morse files
+makerss.py -- a Python script to build RSS feeds from installed Morse files
+tovoice.c -- a C program that generates verbal spelling from text (BETA)
+
+3.  What other software is required?
+
+Libsndfile is required for the C programs.  Please see
+http://www.mega-nerd.com/libsndfile/ for more information.
+
+PyRSS2Gen is required for the Python script.  Please see
+http://www.salkescientific.com/Python/PyRSS2Gen.html for more
+information.
+
+4.  How do I use tomorse?
+
+Quick example:  echo cq | tomorse > cq.wav
+
+tomorse takes command-line arguments to change pitch, character speed,
+and word speed.  tomorse generates Farnsworth code with proper
+timings.
+
+Modify morse-build, morse-install, and makerss.py to reflect your local
+environment, run them once or twice by hand to make sure they work,
+then stick them in cron and you too can generate Koch practice files
+every night complete with RSS feeds.
+
+tovoice requires a set of voice files to be created, one for each
+character in the charstr variable.  Stick those files in a directory,
+use the command-line arguments to point at that directory, and you can
+generate spoken versions of your Koch practice files suitable for
+testing results.
+
+5.  Where do I get help?
+
+Your best bet is to contact jmt@twilley.org as he's the author of this
+mess.  He no longer actively uses this code but he continues to
+maintain it for those who need a small, simple method of generating
+Morse code from text.
